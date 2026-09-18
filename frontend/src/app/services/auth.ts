@@ -18,7 +18,7 @@ interface LoginResponse {
 export class AuthService {
 
     private http = inject(HttpClient);
-    private apiUrl = 'http://localhost/api'
+    private apiUrl = 'http://localhost:8000/api'
 
     token = signal<string | null>(localStorage.getItem('token'));
     utente = signal<Utente | null>(this.leggiUtenteSalvato());
@@ -29,7 +29,7 @@ export class AuthService {
     }
 
     register(nome: string, email: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiUrl}/register.php`, { nome, email, password }).pipe(
+    return this.http.post<LoginResponse>(`${this.apiUrl}/register`, { nome, email, password }).pipe(
         tap(res => {
         this.token.set(res.token);
         this.utente.set(res.utente);
@@ -40,7 +40,7 @@ export class AuthService {
     }
 
     login(email: string, password: string): Observable<LoginResponse> {
-        return this.http.post<LoginResponse>(`${this.apiUrl}/login.php`, { email, password }).pipe(
+        return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { email, password }).pipe(
             tap(res => {
                 this.token.set(res.token);
                 this.utente.set(res.utente);

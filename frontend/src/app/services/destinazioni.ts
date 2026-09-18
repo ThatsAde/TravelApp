@@ -6,7 +6,7 @@ import { Destinazione } from '../models/destinazione.model';
 @Injectable({ providedIn: 'root' })
 export class DestinazioniService {
 
-    private apiUrl = "http://localhost/api/destinazioni.php";
+    private apiUrl = "http://localhost:8000/api/destinazioni";
 
     constructor (private http: HttpClient) {
 
