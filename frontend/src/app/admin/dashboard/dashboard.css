@@ -1,0 +1,124 @@
+.admin-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e3e0d5;
+}
+
+.tabs button {
+    padding: 0.8rem 1.2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    color: #5c6b5d;
+    cursor: pointer;
+}
+
+.tabs button.attiva {
+    color: #2d3b2e;
+    border-bottom-color: #4a6b4d;
+}
+
+.form-destinazione {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(45, 59, 46, 0.08);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #2d3b2e;
+}
+
+.campo input, .campo textarea {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #d8d4c5;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.errore {
+  color: #b3452c;
+  margin-bottom: 1rem;
+}
+
+.azioni-form {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.azioni-form button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.azioni-form button[type="submit"] {
+  background: #2d3b2e;
+  color: #f7f5f0;
+}
+
+.azioni-form .secondario {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(45, 59, 46, 0.08);
+}
+
+th, td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f7f5f0;
+  color: #2d3b2e;
+}
+
+.azioni-riga {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.azioni-riga button {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: #eef3ea;
+  color: #2d3b2e;
+}
+
+.azioni-riga .pericolo {
+  background: #fbeae5;
+  color: #b3452c;
+}

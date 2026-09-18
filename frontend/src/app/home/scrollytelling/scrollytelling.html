@@ -1,0 +1,43 @@
+<!--
+  Container esterno: la sua altezza (400vh nel CSS) definisce QUANTO scroll fisico
+  l'utente deve fare per vedere l'intera sequenza di frame.
+  Aumentala se vuoi un'esperienza più "lenta" e dilatata, riducila per una più rapida.
+-->
+<div class="scroll-container" #scrollContainer>
+
+
+  <!--
+    Wrapper con position: sticky — è il trucco che fa "restare fermo" il canvas
+    in cima alla viewport mentre il container esterno continua a scorrere sotto.
+  -->
+    <div class="sticky-wrapper">
+        <canvas #canvas></canvas>
+  
+        <app-header #headerEl></app-header>
+
+        <div class="text-overlay" #text1>
+            <h1>Il mondo ti aspetta.</h1>
+            <p>Scopri viaggi su misura, pensati per te.</p>
+        </div>
+
+        <div class="text-overlay" #text2>
+            <h1>Ogni destinazione, una storia diversa.</h1>
+            <p>Dalle coste nascoste alle metropoli che non dormono mai.</p>
+        </div>
+
+        <div class="text-overlay" #text3>
+            <h1>Non solo un viaggio. Un'esperienza da vivere.</h1>
+            <p>Itinerari curati nei minimi dettagli, dal primo passo al ritorno a casa.</p>
+        </div>
+
+        <div class="text-overlay" #text4>
+            <h1>Pronto a partire?</h1>
+            <p>Inizia a pianificare il tuo prossimo viaggio oggi stesso.</p>
+        </div>
+
+        <div class="fade-overlay" #fadeOverlay></div>
+
+
+    </div>
+
+</div>

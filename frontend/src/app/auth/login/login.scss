@@ -1,0 +1,85 @@
+.auth-container {
+  max-width: 420px;
+  margin: 5rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(45, 59, 46, 0.1);
+}
+
+.auth-container h2 {
+  text-align: center;
+  color: #2d3b2e;
+  margin-bottom: 2rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #2d3b2e;
+}
+
+input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #d8d4c5;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4a6b4d;
+}
+
+.errore-campo {
+  color: #b3452c;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.errore-generale {
+  color: #b3452c;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #2d3b2e;
+  color: #f7f5f0;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #4a6b4d;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.link-alternativo {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #5c6b5d;
+}
+
+.link-alternativo a {
+  color: #4a6b4d;
+  font-weight: 600;
+  text-decoration: none;
+}

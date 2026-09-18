@@ -1,0 +1,56 @@
+<div class="preventivo-section">
+  <h2>Richiedi un preventivo</h2>
+
+  <div *ngIf="inviato" class="successo">
+    Richiesta inviata! Ti contatteremo presto.
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!inviato">
+
+    <div class="campo">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" formControlName="nome">
+      <span class="errore-campo" *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+        Inserisci il tuo nome (almeno 2 caratteri)
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+      <span class="errore-campo" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Inserisci un'email valida
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="meta">Meta</label>
+      <input id="meta" type="text" formControlName="meta">
+      <span class="errore-campo" *ngIf="form.get('meta')?.invalid && form.get('meta')?.touched">
+        Indica la destinazione che ti interessa
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="budget">Budget (€)</label>
+      <input id="budget" type="number" formControlName="budget">
+      <span class="errore-campo" *ngIf="form.get('budget')?.invalid && form.get('budget')?.touched">
+        Inserisci un budget valido
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="messaggio">Messaggio (opzionale)</label>
+      <textarea id="messaggio" formControlName="messaggio" rows="4"></textarea>
+    </div>
+
+    <div *ngIf="errore" class="errore-generale">
+      Qualcosa è andato storto, riprova.
+    </div>
+
+    <button type="submit" [disabled]="invioInCorso">
+      {{ invioInCorso ? 'Invio in corso...' : 'Invia richiesta' }}
+    </button>
+
+  </form>
+</div>

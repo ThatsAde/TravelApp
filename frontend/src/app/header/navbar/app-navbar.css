@@ -1,0 +1,162 @@
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5rem 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 36rem;
+    padding: 0.75rem 1.5rem;
+    background: #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  flex-shrink: 0;
+}
+ 
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+.nav-links a {
+  color: #111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+ 
+.nav-links a:hover {
+  color: #6b6b6b;
+}
+ 
+.cta {
+  padding: 0.5rem 1.25rem;
+  background: #000;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+ 
+.cta:hover {
+  background: #333;
+}
+ 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #111;
+}
+ 
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 6rem 2rem 2rem;
+  background: #ffffff;
+}
+ 
+.mobile-menu a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+ 
+.mobile-menu .cta {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+ 
+@media (max-width: 768px) {
+  .nav-links,
+  .navbar .cta {
+    display: none;
+  }
+ 
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.auth-area {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+  background: #f5f5f5;
+  border-radius: 999px;
+}
+
+.user-avatar {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.user-greeting {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #111;
+  white-space: nowrap;
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis; /* nomi lunghi diventano "Porcodioan..." invece di rompere il layout */
+}
+
+.cta-logout {
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  background: transparent;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.cta-logout:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}

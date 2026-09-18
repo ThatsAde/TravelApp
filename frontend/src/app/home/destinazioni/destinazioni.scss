@@ -1,0 +1,121 @@
+.destinazioni-section {
+  position: relative;
+  z-index: 40;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: -12vh;
+  padding: 7rem max(2rem, calc((100vw - 900px) / 2));
+  background: #f7f5f0; // crema tenue, richiama la carta/pergamena da esplorazione
+  border-radius: 56px 56px 0 0;
+  box-shadow: 0 -18px 50px rgba(20, 36, 22, 0.16);
+}
+
+.destinazioni-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2d3b2e; // verde scuro quasi nero, tipo foresta profonda
+  font-size: 2.2rem;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.card {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(45, 59, 46, 0.15); // ombra verdastra invece che nera pura
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #e3e0d5;
+}
+
+.card img {
+  width: 100%;
+  height: 380px;
+  display: block;
+  object-fit: cover;
+  background: #e8e4d8; // placeholder color, mai bianco vuoto se l'immagine è rotta
+}
+
+.card h3 {
+  margin: 1.5rem 0 0.6rem;
+  font-size: 1.6rem;
+  color: #2d3b2e;
+}
+
+.card p {
+  padding: 0 2rem;
+  color: #5c6b5d; // grigio-verde, non nero puro
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+.card .prezzo {
+  display: inline-block;
+  margin: 1.2rem 0 2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #4a6b4d; // verde muschio, colore d'accento del sito
+  background: #eef3ea;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  background: #2d3b2e; // verde scuro invece di nero
+  color: #f7f5f0;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+}
+
+.arrow:hover:not(:disabled) {
+  transform: scale(1.1);
+  background: #4a6b4d;
+}
+
+.arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .destinazioni-section {
+    margin-top: -8vh;
+    padding: 5rem 1rem 4rem;
+    border-radius: 32px 32px 0 0;
+  }
+
+  .carousel {
+    gap: 0.65rem;
+  }
+
+  .arrow {
+    width: 42px;
+    height: 42px;
+  }
+}

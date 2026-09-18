@@ -1,0 +1,39 @@
+<div class="auth-container">
+  <h2>Crea un account</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="campo">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" formControlName="nome">
+      <span class="errore-campo" *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+        Inserisci il tuo nome (almeno 2 caratteri)
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+      <span class="errore-campo" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Inserisci un'email valida
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password">
+      <span class="errore-campo" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Almeno 8 caratteri
+      </span>
+    </div>
+
+    <div *ngIf="errore" class="errore-generale">{{ errore }}</div>
+
+    <button type="submit" [disabled]="invioInCorso">
+      {{ invioInCorso ? 'Registrazione...' : 'Registrati' }}
+    </button>
+
+  </form>
+
+  <p class="link-alternativo">Hai già un account? <a routerLink="/login">Accedi</a></p>
+</div>

@@ -1,0 +1,98 @@
+<div class="admin-container">
+    <h1>Dashboard Admin</h1>
+
+    <div class="tabs">
+        <button [class.attiva]="tabAttiva() === 'destinazioni'" (click)="tabAttiva.set('destinazioni')">
+            Destinazioni
+        </button>
+        <button [class.attiva]="tabAttiva() === 'richieste'" (click)="tabAttiva.set('richieste')">
+            Richieste Preventivo ({{ richieste().length }})
+        </button>
+    </div>
+
+    @if (tabAttiva() === 'destinazioni') {
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-destinazione">
+            <h3>{{ modalitaModifica() ? 'Modifica destinazione' : 'Nuova destinazione'}}</h3>
+            
+            <div class="campo">
+                <label>Titolo</label>
+                <input type="text" formControlName="titolo">
+            </div>
+
+            <div class="campo">
+                <label>Descrizione</label>
+                <textarea formControlName="descrizione" rows="3"></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Immagine (Nome File)</label>
+                <input type="text" formControlName="immagine" placeholder="es. santorini.jpg">
+            </div>
+
+            <div class="campo">
+                <label>Prezzo (€)</label>
+                <input type="number" formControlName="prezzo">
+            </div>
+
+            @if (messaggioErrore()) {
+                <div class="errore">{{ messaggioErrore() }}</div>
+            }
+
+            <div class="azioni-form">
+                <button type="submit">{{ modalitaModifica() ? 'Salva modifiche' : 'Crea destinazione' }}</button>
+                @if (modalitaModifica()) {
+                <button type="button" class="secondario" (click)="annullaModifica()">Annulla</button>
+                }
+            </div>
+
+        </form>
+
+        <table class="tabella-destinazioni">
+            <thead>
+                <tr>
+                    <th>Titolo</th>
+                    <th>Prezzo</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (d of destinazioni(); track d.id) {
+                    <tr>
+                        <td>{{ d.titolo }}</td>
+                        <td>{{ d.prezzo }}</td>
+                        <td class="azioni-riga">
+                            <button (click)="iniziaModifica(d)">Modifica</button>
+                            <button class="pericolo" (click)="elimina(d.id)">Elimina</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    } @else {
+
+    <table class="tabella-richieste">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Meta</th>
+          <th>Budget</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (r of richieste(); track r.id) {
+          <tr>
+            <td>{{ r.nome }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.meta }}</td>
+            <td>€ {{ r.budget }}</td>
+            <td>{{ r.creato_il }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+  }
+
+</div>

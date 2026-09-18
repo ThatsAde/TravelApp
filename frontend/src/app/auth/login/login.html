@@ -1,0 +1,31 @@
+<div class="auth-container">
+  <h2>Accedi</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+      <span class="errore-campo" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Inserisci un'email valida
+      </span>
+    </div>
+
+    <div class="campo">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password">
+      <span class="errore-campo" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Inserisci la password
+      </span>
+    </div>
+
+    <div *ngIf="errore" class="errore-generale">{{ errore }}</div>
+
+    <button type="submit" [disabled]="invioInCorso">
+      {{ invioInCorso ? 'Accesso...' : 'Accedi' }}
+    </button>
+
+  </form>
+
+  <p class="link-alternativo">Non hai un account? <a routerLink="/register">Registrati</a></p>
+</div>

@@ -1,0 +1,9 @@
+html, body {
+  margin: 0;
+  overflow-x: clip;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+}

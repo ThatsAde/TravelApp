@@ -1,0 +1,29 @@
+<section class="destinazioni-section">
+  <h2>Le nostre mete</h2>
+
+
+  <div *ngIf="loading()" class="loading">Caricamento mete...</div>
+  <div *ngIf="error()" class="error">Impossibile caricare le destinazioni.</div>
+
+  <div class="carousel" *ngIf="!loading() && !error()">
+    <button class="arrow arrow-left" (click)="prev()" [disabled]="currentIndex() === 0">
+      ‹
+    </button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" [style.transform]="'translateX(' + (-currentIndex() * 100) + '%)'">
+        <div class="card" *ngFor="let d of destinazioni()">
+          <img [src]="'assets/destinazioni/' + d.immagine" [alt]="d.titolo">
+          <h3>{{ d.titolo }}</h3>
+          <p>{{ d.descrizione }}</p>
+          <span class="prezzo">€ {{ d.prezzo }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow arrow-right" (click)="next()" [disabled]="currentIndex() === destinazioni().length - 1">
+      ›
+    </button>
+
+  </div>
+</section>

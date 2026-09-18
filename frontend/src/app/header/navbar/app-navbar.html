@@ -1,0 +1,52 @@
+<div class="navbar-wrapper">
+    <nav class="navbar">
+
+        <div class="logo"></div>
+
+        <ul class="nav-links">
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/pricing" routerLinkActive="active">Pricing</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+
+        <div class="auth-area">
+            @if (authService.isLoggedIn()) {
+                <div class="user-chip">
+                    <div class="user-avatar">{{ authService.utente()?.nome?.charAt(0) }}</div>
+                    <span class="user-greeting">{{ authService.utente()?.nome }}</span>
+                </div>
+                <button class="cta cta-logout" (click)="logout()">Logout</button>
+            } @else {
+                <a routerLink="/register" class="cta">Get Started</a>
+            }
+        </div>
+
+        <button class="menu-toggle" (click)="toggleMenu()" aria-label="Apri menu">
+            @if (!isOpen()) {
+                <span>&#9776;</span>
+            } @else {
+                <span>&#10005;</span>
+            }
+        </button>
+    </nav>
+
+    @if (isOpen()) {
+        <div class="mobile-menu">
+            <a routerLink="/" (click)="closeMenu()">Home</a>
+            <a routerLink="/pricing" (click)="closeMenu()">Pricing</a>
+            <a href="#" (click)="closeMenu()">Docs</a>
+            <a href="#" (click)="closeMenu()">Projects</a>
+
+            @if (authService.isLoggedIn()) {
+                <span class="user-greeting">Ciao, {{ authService.utente()?.nome }}</span>
+                <button class="cta cta-logout" (click)="logout()">Logout</button>
+            } @else {
+                <a routerLink="/register" class="cta" (click)="closeMenu()">Get Started</a>
+            }
+        </div>
+    }
+
+
+
+</div>
